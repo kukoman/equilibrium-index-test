@@ -20,7 +20,7 @@ class Equilibrium extends AbstractPlugin
      */
     public function calculate(array $numbers)
     {
-        $count       = sizeof($numbers);
+        $count       = count($numbers);
         $left        = 0;
         $right       = array_sum($numbers);
         $equilibrium = array();

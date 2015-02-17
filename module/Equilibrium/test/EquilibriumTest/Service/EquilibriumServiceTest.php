@@ -101,7 +101,6 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
      */
     public function testTotallyUselessMock()
     {
-//        $eqMock = $this->getMock(get_class($this->service), ['getStrict'], [], '', false);
         $eqMock = $this->getMockBuilder('Equilibrium\Service\Equilibrium')
             ->disableOriginalConstructor()
             ->setMethods(['getStrict'])
