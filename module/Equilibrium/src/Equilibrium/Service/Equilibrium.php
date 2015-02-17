@@ -1,5 +1,5 @@
 <?php
-namespace Application\Service;
+namespace Equilibrium\Service;
 
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
