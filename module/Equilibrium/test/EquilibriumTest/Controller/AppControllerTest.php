@@ -26,8 +26,8 @@ class AppControllerTest extends AbstractHttpControllerTestCase
         $this->dispatch('/equilibrium-index/2,1,7,3');
         $this->assertResponseStatusCode(200);
 //
-        $this->assertModuleName('Application');
-        $this->assertControllerName('Application\Controller\Index');
+        $this->assertModuleName('Equilibrium');
+        $this->assertControllerName('Equilibrium\Controller\Index');
         $this->assertControllerClass('IndexController');
         $this->assertMatchedRouteName('equilibrium');
     }

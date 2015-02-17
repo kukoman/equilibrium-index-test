@@ -13,7 +13,7 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
 {
     protected $traceError = true;
     /**
-     * @var \Application\Service\Equilibrium
+     * @var \Equilibrium\Service\Equilibrium
      */
     protected $service;
 
@@ -57,7 +57,7 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
 
     public function testServiceInstance()
     {
-        $this->assertInstanceOf('Application\Service\Equilibrium',
+        $this->assertInstanceOf('Equilibrium\Service\Equilibrium',
             $this->service);
     }
 
@@ -102,7 +102,7 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
     public function testTotallyUselessMock()
     {
 //        $eqMock = $this->getMock(get_class($this->service), ['getStrict'], [], '', false);
-        $eqMock = $this->getMockBuilder('Application\Service\Equilibrium')
+        $eqMock = $this->getMockBuilder('Equilibrium\Service\Equilibrium')
             ->disableOriginalConstructor()
             ->setMethods(['getStrict'])
             ->getMock();
