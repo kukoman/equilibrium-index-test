@@ -1,3 +1,3 @@
 
 # equilibrium-index-test
-See the Application module
+See the Equilibrium module

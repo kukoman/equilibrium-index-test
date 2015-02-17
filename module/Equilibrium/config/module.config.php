@@ -7,7 +7,7 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Equilibrium\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -22,7 +22,7 @@ return array(
                         'mode' => 'strict', // very strict route
                     ),
                     'defaults'    => array(
-                        'controller' => 'Application\Controller\Index',
+                        'controller' => 'Equilibrium\Controller\Index',
                         'action'     => 'index',
                     ),
                 ),
@@ -30,13 +30,13 @@ return array(
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
-            // using the path /application/:controller/:action
-            'application' => array(
+            // using the path /equilibrium/:controller/:action
+            'equilibrium' => array(
                 'type'    => 'Literal',
                 'options' => array(
-                    'route'    => '/application',
+                    'route'    => '/equilibrium',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
+                        '__NAMESPACE__' => 'Equilibrium\Controller',
                         'controller'    => 'Index',
                         'action'        => 'index',
                     ),
@@ -68,7 +68,7 @@ return array(
             'translator' => 'MvcTranslator',
         ),
         'invokables' => [
-            'Equilibrium' => 'Application\Service\Equilibrium'
+            'Equilibrium' => 'Equilibrium\Service\Equilibrium'
         ],
         'factories' => [
           'Test' => function($serviceLocator) {
@@ -86,7 +86,7 @@ return array(
     ),
     'controller_plugins' => array(
         'invokables' => array(
-            'Equilibrium' => 'Application\Service\Equilibrium',
+            'Equilibrium' => 'Equilibrium\Service\Equilibrium',
         )
     ),
     'translator' => array(
@@ -101,7 +101,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Equilibrium\Controller\Index' => 'Equilibrium\Controller\IndexController'
         ),
     ),
     'view_manager' => array(
@@ -112,7 +112,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
-            'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
+            'equilibrium/index/index' => __DIR__ . '/../view/equilibrium/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ),
