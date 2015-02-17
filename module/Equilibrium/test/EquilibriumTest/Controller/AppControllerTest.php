@@ -16,7 +16,7 @@ class AppControllerTest extends AbstractHttpControllerTestCase
     public function setUp()
     {
         $this->setApplicationConfig(
-            include '/var/www/zf2test/config/application.config.php'
+            include APP_CONFIG_DIR . '/application.config.php'
         );
         parent::setUp();
     }
