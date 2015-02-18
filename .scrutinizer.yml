@@ -3,8 +3,9 @@ checks:
         code_rating: true
         duplication: true
 filter:
-    paths: [Equilibrium/*]
-    excluded_paths: [config/*, language/*]
+    excluded_paths:
+      - config/*
+      - test/*
 tools:
     external_code_coverage:
         timeout: 1000
