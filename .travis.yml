@@ -4,4 +4,8 @@ php:
 before_script:
     - composer self-update
     - composer --dev install
-script: phpunit -c module/Equilibrium/test/phpunit.xml
+script:
+  - phpunit -c module/Equilibrium/test/phpunit.xml
+  - phpunit --coverage-clover=coverage.clover
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
