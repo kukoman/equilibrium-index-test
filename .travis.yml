@@ -3,7 +3,7 @@ php:
     - 5.5
 before_script:
     - composer self-update
-    - composer --dev install
+    - composer install
 script:
   - phpunit -c module/Equilibrium/test/phpunit.xml --coverage-clover=coverage.clover
   - wget https://scrutinizer-ci.com/ocular.phar
