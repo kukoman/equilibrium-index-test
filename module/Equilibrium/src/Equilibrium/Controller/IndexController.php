@@ -1,6 +1,7 @@
 <?php
 namespace Equilibrium\Controller;
 
+use Equilibrium\Exception\UnexpectedValueException;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -21,7 +22,7 @@ class IndexController extends AbstractActionController
             // split comma separated values
             $values = explode(',', $this->params()->fromRoute('values'));
             $result = $this->equilibrium()->calculate($values);
-        } catch (\Exception $e) {
+        } catch (UnexpectedValueException $e) {
             $this->getResponse()->setStatusCode(409);
         }
 

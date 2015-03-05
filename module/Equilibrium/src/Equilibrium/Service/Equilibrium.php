@@ -1,13 +1,14 @@
 <?php
 namespace Equilibrium\Service;
 
+use Equilibrium\Exception\UnexpectedValueException;
 use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 /**
  * Class Equilibrium
  * @package Application\Service
  */
-class Equilibrium extends AbstractPlugin
+class Equilibrium extends AbstractPlugin implements EquilibriumServiceInterface
 {
     protected $strict = false;
 
@@ -28,7 +29,7 @@ class Equilibrium extends AbstractPlugin
             $right -= $numbers[$i];
 
             if($this->getStrict() && !is_numeric($numbers[$i])) {
-                throw new \Exception('Wrong input argument', 409);
+                throw new UnexpectedValueException('Wrong input value', 409);
             }
 
             if ($left == $right) {

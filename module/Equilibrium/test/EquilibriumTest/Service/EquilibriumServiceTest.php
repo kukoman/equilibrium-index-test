@@ -1,6 +1,7 @@
 <?php
 namespace EquilibriumTest\Service;
 
+use Equilibrium\Exception\UnexpectedValueException;
 use Zend\Test\PHPUnit\Controller\AbstractHttpControllerTestCase;
 
 /**
@@ -57,7 +58,7 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
 
     public function testServiceInstance()
     {
-        $this->assertInstanceOf('Equilibrium\Service\Equilibrium',
+        $this->assertInstanceOf('Equilibrium\Service\EquilibriumServiceInterface',
             $this->service);
     }
 
@@ -73,7 +74,7 @@ class EquilibriumServiceTest extends AbstractHttpControllerTestCase
 
     public function testInvalidValuesWithException()
     {
-        $this->setExpectedException('Exception');
+        $this->setExpectedException('Equilibrium\Exception\ExceptionInterface');
         $this->service->setStrict(true);
         $this->service->calculate(['1', '2a']);
     }
