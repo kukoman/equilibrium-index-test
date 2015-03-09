@@ -21,6 +21,8 @@ class IndexController extends AbstractActionController
             // try to calculate equilibrium
             // split comma separated values
             $values = explode(',', $this->params()->fromRoute('values'));
+
+            // using plugin
             $result = $this->equilibrium()->calculate($values);
         } catch (UnexpectedValueException $e) {
             $this->getResponse()->setStatusCode(409);
