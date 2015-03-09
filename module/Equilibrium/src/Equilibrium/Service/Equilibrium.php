@@ -28,7 +28,7 @@ class Equilibrium extends AbstractPlugin implements EquilibriumServiceInterface
         for ($i = 0; $i < $count; $i++) {
             $right -= $numbers[$i];
 
-            if (!$this->strictValidation($numbers, $i)) {
+            if (!$this->strictValidation($numbers[$i])) {
                 throw new UnexpectedValueException('Wrong input value', 409);
             }
 
