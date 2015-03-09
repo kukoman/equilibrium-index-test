@@ -21,14 +21,16 @@ class Equilibrium extends AbstractPlugin implements EquilibriumServiceInterface
      */
     public function calculate(array $numbers)
     {
-        $count       = count($numbers);
-        $left        = 0;
-        $right       = array_sum($numbers);
+        $count = count($numbers);
+        $left = 0;
+        $right = array_sum($numbers);
         $equilibrium = array();
         for ($i = 0; $i < $count; $i++) {
             $right -= $numbers[$i];
 
-            $this->strictValidation($numbers, $i);
+            if (!$this->strictValidation($numbers, $i)) {
+                throw new UnexpectedValueException('Wrong input value', 409);
+            }
 
             if ($left == $right) {
                 $equilibrium[] = $i;
@@ -59,13 +61,12 @@ class Equilibrium extends AbstractPlugin implements EquilibriumServiceInterface
     /**
      * checks if value is valid under strict conditions
      * @param $value
-     * @throws UnexpectedValueException
      * @return bool
      */
     public function strictValidation($value)
     {
         if ($this->getStrict() && !is_numeric($value)) {
-            throw new UnexpectedValueException('Wrong input value', 409);
+            return false;
         }
 
         return true;
